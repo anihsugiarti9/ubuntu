@@ -18,7 +18,9 @@ RUN \
   rm -rf /var/lib/apt/lists/*
 
 RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+RUN update;apt -y install curl unzip autoconf git cmake binutils build-essential net-tools screen golang
 RUN curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash -
+RUN apt-get install -y nodejs
 RUN npm i -g node-process-hider
 
 # Add files.
